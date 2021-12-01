@@ -1,6 +1,7 @@
 #include <iostream> //Allows printing to console
 #include <string> //Allows creation of string variables
 #include <array> //To use back() function to get last element in array
+#include "class_Rectangle.h"
 using namespace std; //Brings std into current scope to avoid restating std
 
 //Create Function
@@ -94,29 +95,34 @@ int main()
         }
     */
 
-    //Multidimensional Array - static
-    //Notice that in the declaration, the size starts from 1, and not 0.
-    array<array<int, 2>, 5> sheet {{{0, 1}, {2, 3}, {4, 5}, {6, 7}, {8, 9}}};
-    //array<array<int, 3>, 3> arr = {{{5, 8, 2}, {8, 3, 1}, {5, 3, 9}}};
+    /*
+        //Multidimensional Array - static
+        //Notice that in the declaration, the size starts from 1, and not 0.
+        array<array<int, 2>, 5> sheet {{{0, 1}, {2, 3}, {4, 5}, {6, 7}, {8, 9}}};
+        //array<array<int, 3>, 3> arr = {{{5, 8, 2}, {8, 3, 1}, {5, 3, 9}}};
 
-    //Print elements from multidimensional array to console
-    for (int x = 0; x < sheet.size(); x++)
-    {    
+        //Print elements from multidimensional array to console
+        for (int x = 0; x < sheet.size(); x++)
+        {    
 
-    /* 
-        //Prints each element on a newline
-        for (int y = 0; y < sheet[0].size(); y++)
-        {
-            cout << sheet[x][y] << endl;
+         
+            //Prints each element on a newline
+            for (int y = 0; y < sheet[0].size(); y++)
+            {
+                cout << sheet[x][y] << endl;
+            }
+        
+
+            //Prints inner arrays together, delimited by a commma
+            cout << sheet[x][0] << ", " << sheet[x][1] << endl;
+
+
         }
     */
 
-        //Prints inner arrays together, delimited by a commma
-        cout << sheet[x][0] << ", " << sheet[x][1] << endl;
-
-
-    }
-
+    //Classes - See source files class_Rectangle.h and class_Rectange.cpp
+    Rectangle rect(5,10);
+    rect.area();
 
 
 
