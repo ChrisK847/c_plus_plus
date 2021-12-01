@@ -121,10 +121,9 @@ int main()
     */
 
     //Classes - See source files class_Rectangle.h and class_Rectange.cpp
-    Rectangle rect(5,10);
-    int area = rect.area();
-    cout << area << endl;
-
+    Rectangle rect(10,20);
+    int area1 = rect.area();
+    cout << "area = " << area1 << endl;
 
     //Prevent console from closing automatically. >0 stores default pause verbiage into a file named 0.
     system("pause>0");
