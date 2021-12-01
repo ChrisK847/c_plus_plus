@@ -1,7 +1,8 @@
 #include <iostream> //Allows printing to console
 #include <string> //Allows creation of string variables
 #include <array> //To use back() function to get last element in array
-#include "class_Rectangle.h"
+//#include "class_Rectangle.h"
+#include "./class_Rectangle.cpp"
 using namespace std; //Brings std into current scope to avoid restating std
 
 //Create Function
@@ -9,6 +10,13 @@ int addition (int a, int b)
 {
     int r;
     r = a + b;
+    return r;
+}
+
+int multiplication (int a, int b)
+{
+    int r;
+    r = a * b;
     return r;
 }
 
@@ -119,11 +127,17 @@ int main()
 
         }
     */
+   /*
+        //Classes - See source files class_Rectangle.h and class_Rectange.cpp
+        Rectangle rect1;
+        Rectangle rect2(7,19);
+        cout << "rect1 area = " << rect1.area() << endl;
+        cout << "rect2 area = " << rect2.area() << endl;
+    */
 
-    //Classes - See source files class_Rectangle.h and class_Rectange.cpp
-    Rectangle rect(10,20);
-    int area1 = rect.area();
-    cout << "area = " << area1 << endl;
+   
+
+
 
     //Prevent console from closing automatically. >0 stores default pause verbiage into a file named 0.
     system("pause>0");

@@ -2,8 +2,9 @@
 using namespace std;
 class Rectangle{
     private:
-        int m_height, m_width, m_area;
+        int m_height, m_width;
     public:
-        Rectangle(int height, int width):m_height(height),m_width(width){};
-        int area(){return m_area;};
+        Rectangle(void);
+        Rectangle(int height, int width);
+        int area(void);
 };

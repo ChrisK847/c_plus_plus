@@ -1,13 +1,19 @@
 #include "./class_Rectangle.h"
 
+    Rectangle::Rectangle(void)
+    {
+        m_height = 0;
+        m_width = 0;
+    }
+
     Rectangle::Rectangle(int height, int width)
     {
         m_height = height;
         m_width = width;
     }
 
-int Rectangle::area()
+int Rectangle::area(void)
 {
-    Rectangle::m_area = Rectangle::m_height - Rectangle::m_width;
-    return Rectangle::m_area
+    int a = m_height * m_width;
+    return a;
 }
