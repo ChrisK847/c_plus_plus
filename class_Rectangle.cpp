@@ -6,7 +6,7 @@ Rectangle::Rectangle(int height, int width)
     this->m_width = width;
 }
 
-int Rectangle::area()
+int Rectangle::area(void)
 {
-    cout << this->m_height * this->m_width << endl;
+    return this->m_height * this->m_width;
 }
