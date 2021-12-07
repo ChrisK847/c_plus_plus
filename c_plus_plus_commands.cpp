@@ -284,7 +284,71 @@ int main()
             The C++ standard library does not provide a proper date type. 
             C++ inherits the structs and functions for date and time manipulation from C. 
             To access date and time related functions and structures, you would need to include <ctime> header file in your C++ program.
+            There are four time-related types: clock_t, time_t, size_t, and tm.
         */
+
+       //Current Date/Time
+            time_t now=time(0); //Current time in seconds since Jan 1, 1970
+            time_t *p_now = &now; //Pointer of now to be used in localtime()
+            char *today=ctime(&now); //Converts time in seconds from Jan 1, 1970 to Date format - DDD MMM DD HH:mm:ss yyyy
+       
+       //Creates struct with members sec, min, hour, mday, mon, year, wday, yday, isdst
+            //struct tm *local=localtime(p_now); //This returns a pointer to the tm structure representing local time.
+            //cout << local->tm_yday << endl;
+
+        //Time in UTC / Greenwich Mean Time (GMT)
+            struct tm *gmt=gmtime(p_now);
+            //cout << gmt->tm_hour << ":" << gmt->tm_min << ":" << gmt->tm_sec << endl;
+
+        //Convert tm Struct back to human-readable time
+            //time_t mk=mktime(gmt);
+            //cout << ctime(&mk) << endl;
+
+        //Difference in seconds between two dates
+            /*
+                double seconds;
+                struct tm later = {0};
+                later.tm_hour = 12; later.tm_min = 30; later.tm_sec = 0;
+                later.tm_year = 122; later.tm_mon = 0; later.tm_mday = 1;
+                seconds = difftime(mktime(&later),now);
+                time_t laterDate=mktime(&later);
+                cout << "hours = " << seconds / 60 / 60 << " | laterDate = " << ctime(&laterDate) << endl;
+            */
+
+        //Format Date/
+            /*
+                //https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm
+                time_t rawtime;
+                struct tm *info;
+                char buffer[80];
+                time(&rawtime);
+                info = localtime(&rawtime);
+                strftime(buffer,80,"%x %H:%M:%S", info); //12/07/21 02:37:24
+                cout << buffer << endl;
+            */
+
+
+       
+       //Clock
+            /*
+                clock_t start_t, end_t, total_t;
+                int i;
+
+                start_t = clock();
+                cout << "clock started " << start_t << endl;
+                cout << "scanning big loop " << start_t << endl;
+                for (i = 0; i<100000000; i++){
+
+                }
+                end_t = clock();
+                cout << "end of big loop " << end_t << endl;
+                total_t = double(end_t - start_t); //Number of ticks of run-time
+                cout << "Total ticks taken by CPU = " << total_t << " | Total Seconds = " << total_t / 1000.0 << endl;
+                cout << "clocks_per_second = " << CLOCKS_PER_SEC << endl;
+            */
+
+
+
 
     //Prevent console from closing automatically. >0 stores default pause verbiage into a file named 0.
     system("pause>0");
