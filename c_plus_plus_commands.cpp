@@ -316,19 +316,17 @@ int main()
             */
 
         //Format Date/
-            /*
                 //https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm
                 time_t rawtime;
                 struct tm *info;
                 char buffer[80];
                 time(&rawtime);
                 info = localtime(&rawtime);
-                strftime(buffer,80,"%x %H:%M:%S", info); //12/07/21 02:37:24
+                //strftime(buffer,80,"%x %H:%M:%S", info); //12/07/21 02:37:24
+                strftime(buffer,80,"%x %X %z",info); //12/07/21 02:37:24 Eastern Standard Time
+                //strftime(buffer,80,"%B %d, %Y",info); //March 16, 2021
                 cout << buffer << endl;
-            */
-
-
-       
+            
        //Clock
             /*
                 clock_t start_t, end_t, total_t;
